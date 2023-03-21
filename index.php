@@ -1,5 +1,16 @@
 <?php 
 $title = "Page d'accueil";
+require_once 'config.php';
+require_once 'functions.php';
+// Récupérer l'heure d'aujourd'hui $heure
+date_default_timezone_set('Europe/Paris');
+$heure = (int)($_GET['heure'] ?? date('G'));
+$jour = (int)($_GET['jour'] ?? date('N') - 1);
+// Récupérer les créneaux d'aujourd'hui $creneaux
+$creneaux = CRENEAUX[$jour];
+// Récupérer l'état d'ouverture du magasin
+$ouvert = in_creneaux($heure, $creneaux);
+// $color = $ouvert ? 'green' : 'red';
 require 'header.php';
 ?>
 <!-- reservation btn -->
@@ -10,16 +21,15 @@ require 'header.php';
   <div class="col-8">
   <div class="d-grid gap-2 col-6 my-5 mx-auto">
     <h2 class="text-center mb-4">Horaires</h2>
-    <ul class="opening-times-list">
-      <li class="opening-times-item my-2">Lundi: 12H00 à 15H00</li>
-      <li class="opening-times-item my-2">Mardi: 12H00 à 15H00</li>
-      <li class="opening-times-item my-2">Mercredi: Fermé</li>
-      <li class="opening-times-item my-2">Jeudi: 12H00 à 15H00</li>
-      <li class="opening-times-item my-2">Vendredi: 12H00 à 15H00</li>
-      <li class="opening-times-item my-2">Samedi: 12H00 à 15H00</li>
-      <li class="opening-times-item my-2">Dimanche: Fermé</li>
-      </ul>
-      <button class="btn btn-primary btn-reservation mt-4" type="button">Réserver</button>
+    <ul>
+      <?php foreach(JOURS as $k => $jour): ?>
+        <li>
+          <strong><?= $jour ?></strong> : 
+            <?= creneaux_html(CRENEAUX[$k]); ?>
+        </li>
+          <?php endforeach; ?>
+    </ul> 
+    <button class="btn btn-primary btn-reservation mt-4" type="button">Réserver</button>
     </div>
   </div>
 </section>

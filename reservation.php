@@ -1,5 +1,5 @@
 <?php 
-$title = 'Se connecter';
+$title = 'Réserver';
 require_once 'config.php';
 require_once 'functions.php';
 // Récupérer l'heure d'aujourd'hui $heure
@@ -24,11 +24,11 @@ require 'header.php';
 
         <?php if($ouvert): ?>
             <div class="alert alert-success">
-                Magasin: ouvert
+                Restaurant: ouvert
             </div>
         <?php else:?>
             <div class="alert alert-danger">
-                Magasin: fermé
+                Restaurant: fermé
             </div>
         <?php endif?>
 
@@ -40,7 +40,7 @@ require 'header.php';
             <div class="form-group">
                 <input class="form-control" type="number" name="heure" value="<?= $heure ?>">
             </div>
-            <button class="btn btn-primary" type="submit">Voir si le magasin est ouvert</button>
+            <button class="btn btn-primary" type="submit">Voir si le restaurant est ouvert</button>
         </form>
    
         <!-- rajouter ici horaires d'ouvertures avec les jours de la semaine -->

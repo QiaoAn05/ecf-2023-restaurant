@@ -25,13 +25,13 @@ h2 {
     background-color: #143642;
 }
 
-.opening-times-list {
+ul {
     list-style: none;
     font-family: 'Poppins', sans-serif;
 }
-.opening-times-item {
+li{
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: white;
 }
 

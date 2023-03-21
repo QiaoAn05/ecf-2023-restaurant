@@ -17,8 +17,19 @@ function nav_menu(string $linkClass = ''): string
     return
         nav_item('/index.php', 'Accueil', $linkClass) .
         nav_item('/menu.php', 'Menu', $linkClass) .
-        nav_item('/connexion.php', 'Se connecter', $linkClass);
+        nav_item('/reservation.php', 'Réserver', $linkClass);
 }
+
+
+function select (string $name, $value, array $options): string {
+    $html_options = [];
+    foreach($options as $k => $option) {
+        $attribute = $k === $value ? 'selected' : '';
+        $html_options[] = "<option value='$k' $attribute>$option</option>";
+    }
+    return "<select class='form-control' name='$name'>" . implode($html_options) . '</select>';
+}
+
 ?>
 
 <!-- fonction pour les créneaux -->
