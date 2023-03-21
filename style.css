@@ -17,13 +17,27 @@
 h2 {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
+    font-size: 4rem;
+    color: white;
+}
+
+.section-opening-times {
+    background-color: #143642;
 }
 
 .opening-times-list {
     list-style: none;
     font-family: 'Poppins', sans-serif;
-    background-color: pink;
 }
 .opening-times-item {
     font-weight: bold;
+    font-size: 2rem;
+    color: white;
+}
+
+.btn-reservation {
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: #0F8B8D;
+    font-family: 'Poppins', sans-serif;    
 }
