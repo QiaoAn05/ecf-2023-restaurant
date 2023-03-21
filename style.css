@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
+body {
+    overflow-x: hidden;
+}
+
 .carousel-item {
     height: 400px;
 }
@@ -40,4 +44,9 @@ li{
     font-weight: bold;
     background-color: #0F8B8D;
     font-family: 'Poppins', sans-serif;    
+}
+
+.clock-container {
+    background-color: #143642;
+    color: white;
 }
