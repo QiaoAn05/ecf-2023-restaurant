@@ -1,4 +1,7 @@
 -- SQLite
+
+PRAGMA foreign_key = ON;
+
 DROP TABLE IF EXISTS categories;
 DROP TABLE IF EXISTS menus;
 
@@ -11,7 +14,7 @@ INSERT INTO categories (name)
 VALUES
     ('Menu'),
     ('Entrée'),
-    ('Plat')
+    ('Plat'),
     ('Dessert');
 
 CREATE TABLE menus (
@@ -24,7 +27,7 @@ CREATE TABLE menus (
 );
 
 
-INSERT INTO menus (name, slug, price, category_id)
+INSERT INTO menus (name, description, price, category_id)
 VALUES
     ('Menu du gardian','Entrée + plat', 30, 1),
     ('Menu du manadier', 'Plat + Dessert', 30, 1),
@@ -36,6 +39,6 @@ VALUES
     ('Mousse au chocolat', 'Mousse au chocolat noir 80% avec chantilly et coulis de fruit rouge', 5, 4);
 
 
-SELECT m.name, c.name AS type, m.price, m.description
+SELECT c.name AS type, m.name, m.description, m.price
 FROM menus m
 JOIN categories c ON m.category_id = c.id;

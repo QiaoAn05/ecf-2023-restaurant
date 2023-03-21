@@ -30,10 +30,10 @@ function select (string $name, $value, array $options): string {
     return "<select class='form-control' name='$name'>" . implode($html_options) . '</select>';
 }
 
-?>
 
-<!-- fonction pour les créneaux -->
-<?php
+
+//fonction pour les créneaux
+
 function creneaux_html(array $creneaux) {
     //Construire le tableau intermédiaire
     //de Xh à Yh
@@ -59,4 +59,30 @@ function in_creneaux (int $heure, array $creneaux): bool {
     return false;
 }
 
+
+//display database with function
+/*
+function dataOnLine() {
+$db = new SQLite3(__DIR__ . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'db.sqlite');
+$results = $db->query('
+  SELECT h.name, c.name AS type, h.price, h.slug
+  FROM hardwares h
+  JOIN categories c ON h.category_id = c.id;
+');
+  $columns = ['name', 'type', 'description', 'price'];
+  while ($row = $results->fetchArray()) {
+?>
+    <div class="data-line-row container">
+<?php 
+    foreach ($columns as $column) {
+?>
+      <div class="data-line-col data-line"><?= $row[$column] ?></div>
+<?php 
+    }
+?>
+    </div>
+<?php 
+  }
+}
+*/
 ?>

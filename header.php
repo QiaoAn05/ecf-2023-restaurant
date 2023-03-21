@@ -1,5 +1,11 @@
 <?php
-    require_once 'functions.php';
+$db = new SQLite3(__DIR__ . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'db.sqlite');
+$results = $db->query('
+SELECT c.name AS type, m.name, m.description, m.price
+FROM menus m
+JOIN categories c ON m.category_id = c.id;
+');
+require_once 'functions.php';
 ?>
 
 <!DOCTYPE html>
