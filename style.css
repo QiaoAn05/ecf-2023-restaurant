@@ -1,0 +1,13 @@
+.carousel-item {
+    height: 400px;
+}
+
+.navbar {
+    background-color: #143642;
+}
+
+.banner {
+    height: 50vh;
+    background-image: url('media/restaurant.jpg');
+    background-size: cover;
+}
