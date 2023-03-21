@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 .carousel-item {
     height: 400px;
 }
@@ -10,4 +12,18 @@
     height: 50vh;
     background-image: url('media/restaurant.jpg');
     background-size: cover;
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+.opening-times-list {
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+    background-color: pink;
+}
+.opening-times-item {
+    font-weight: bold;
 }
